@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PrimePages Publishing | Discover Your Next Story</title>
+
+    <meta name="description" content="Discover inspiring books, explore new authors, and publish your next masterpiece with PrimePages Publishing.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f6f1;
+            color: #172b24;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #102c24;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        .logo-icon {
+            background: #d5ad66;
+            color: #102c24;
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 8px;
+            font-size: 25px;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #d5ad66;
+        }
+
+        .hero {
+            min-height: 540px;
+            padding: 75px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            background: linear-gradient(
+                110deg,
+                #102c24 0%,
+                #1b4638 65%,
+                #315c48 100%
+            );
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 560px;
+        }
+
+        .eyebrow {
+            color: #e2bd79;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.12;
+            margin-bottom: 22px;
+        }
+
+        .hero-content p {
+            color: #e2e9e4;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #d5ad66;
+            color: #102c24;
+            text-decoration: none;
+            padding: 13px 23px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 5px 8px 5px 0;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #f0d49e;
+            transform: translateY(-2px);
+        }
+
+        .button-outline {
+            background: transparent;
+            color: white;
+            border: 1px solid #d5ad66;
+        }
+
+        .hero-image {
+            width: 40%;
+            max-width: 400px;
+            min-width: 250px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px #0005;
+        }
+
+        section {
+            padding: 75px 7%;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 40px;
+        }
+
+        .section-heading h2 {
+            font-family: Georgia, serif;
+            font-size: clamp(28px, 4vw, 40px);
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            color: #66736c;
+        }
+
+        .books {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .book-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px #102c240d;
+            transition: 0.3s;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px #102c2418;
+        }
+
+        .book-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .book-card h3 {
+            font-family: Georgia, serif;
+            font-size: 21px;
+            margin-bottom: 5px;
+        }
+
+        .book-card p {
+            color: #66736c;
+            font-size: 14px;
+        }
+
+        .services {
+            background: #eeeae0;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 28px;
+            border-radius: 10px;
+        }
+
+        .service-card span {
+            font-size: 32px;
+        }
+
+        .service-card h3 {
+            margin: 15px 0 10px;
+            font-family: Georgia, serif;
+        }
+
+        .service-card p {
+            color: #66736c;
+            font-size: 14px;
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 45px;
+        }
+
+        .about img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .about h2 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            margin-bottom: 18px;
+        }
+
+        .about p {
+            color: #66736c;
+            margin-bottom: 15px;
+        }
+
+        .contact {
+            background: #102c24;
+            color: white;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #d6dfd9;
+            margin: 15px auto 25px;
+            max-width: 550px;
+        }
+
+        footer {
+            background: #091d17;
+            color: #cbd5cf;
+            padding: 25px 7%;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 55px 6%;
+            }
+
+            .hero-image {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .hero-image img {
+                height: 300px;
+            }
+
+            .books,
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER AND LOGO -->
+    <header>
+        <div class="logo">
+            <div class="logo-icon">P</div>
+            <span>PrimePages Publishing</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#books">Books</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <main>
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+                <div class="eyebrow">Stories That Stay With You</div>
+
+                <h1>Every Great Story Deserves to Be Told.</h1>
+
+                <p>
+                    Discover inspiring books, meet extraordinary authors,
+                    and explore stories that educate, entertain, and
+                    change the way you see the world.
+                </p>
+
+                <a href="#books" class="button">Explore Our Books</a>
+
+                <a href="#services" class="button button-outline">
+                    Publish With Us
+                </a>
+            </div>
+
+            <div class="hero-image">
+                <img
+                    src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=85"
+                    alt="Beautiful library filled with books"
+                >
+            </div>
+
+        </section>
+
+        <!-- FEATURED BOOKS -->
+        <section id="books">
+
+            <div class="section-heading">
+                <div class="eyebrow">Our Collection</div>
+                <h2>Discover Your Next Favorite Read</h2>
+                <p>
+                    Explore a selection of stories and ideas for
+                    curious minds, passionate readers, and dreamers.
+                </p>
+            </div>
+
+            <div class="books">
+
+                <article class="book-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=600&q=85"
+                        alt="Books arranged for reading"
+                        loading="lazy"
+                    >
+                    <h3>The Art of Becoming</h3>
+                    <p>Personal Growth · Inspiration</p>
+                </article>
+
+                <article class="book-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=85"
+                        alt="Open book ready to be read"
+                        loading="lazy"
+                    >
+                    <h3>Beyond the Pages</h3>
+                    <p>Fiction · Adventure</p>
+                </article>
+
+                <article class="book-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=600&q=85"
+                        alt="Books and reading materials"
+                        loading="lazy"
+                    >
+                    <h3>Ideas That Matter</h3>
+                    <p>Knowledge · Education</p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- PUBLISHING SERVICES -->
+        <section class="services" id="services">
+
+            <div class="section-heading">
+                <div class="eyebrow">What We Do</div>
+                <h2>Helping Stories Reach the World</h2>
+                <p>
+                    From the first draft to the finished book,
+                    we
